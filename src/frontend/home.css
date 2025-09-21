@@ -1,0 +1,235 @@
+* {
+    font-family: "Jaldi", serif;
+}
+
+body{
+    max-width: 350px;
+    min-width: 350px;
+    min-height: 550px;
+    max-height: 550px;
+    background-color:#FCDDEC;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+p{
+    font-size: 1.25rem;
+}
+
+.btn{
+    background-color: #B36591;
+    border: 3px solid #4B3E48;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+.btn1{
+    background-color: #ffffff;
+    border: 3px solid #4B3E48;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+}
+
+
+.btn:hover{
+    color: white;
+    background-color: #d690b7;
+}
+
+.container{
+    padding: 50px 20px 20px 20px;
+}
+
+img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+hr {
+    max-height: .05em;
+    border: none;
+}
+
+/*Find any id beginning with account. in the beginning*/
+[id^="account."]:hover{
+    background-color: rgb(255,255,255,.5) !important;
+    border-radius: 10px;
+}
+
+div[class='row text-start p-0 m-0']{
+    height: 80px;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #FCDDEC;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#B36591;
+    height: 50%;
+}
+
+#shares-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: #fff;
+}
+
+/*Modal settings */
+.modal {
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent dimmed overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-container {
+    vertical-align: middle;
+    width: 250px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 50%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.accounts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.account-icon {
+    margin-right: 15px;
+}
+
+.account-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.account-details {
+    flex-grow: 1;
+}
+
+.account-details .account-platform {
+    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+}
+
+.account-details .account-username {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.account-view-icon {
+    color: #B36591;
+    padding: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+}
+.rounded-box {
+    border: 3px solid #B3B3B3;
+    border-radius: 50px;
+}
+
+#edit-img-loc:hover{
+    opacity: 0.5;
+}
+
+.password-share-container{
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+.search-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    height: 425px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    overflow: auto;
+}
+
+
+
+.invite-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    height: 425px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    overflow:auto;
+
+
+}
+.invite-card {
+    margin-bottom: 35px; /* Space between each card */
+}
+.small-password-box {
+    width: 150px; /* Shrink width */
+    height: 30px; /* Shrink height */
+    font-size: 0.9rem; /* Reduce text size */
+    padding: 4px; /* Adjust padding */
+    border: 3px solid #B3B3B3;
+    border-radius: 50px;
+}
+.extra-space {
+    margin-bottom: 5rem; /* 80px */
+}
+
+.notification_badge {
+    width: 10px;
+    height: 10px;
+    background-color: #fa3e3e;
+    border-radius: 50%;         /* Makes it a circle */
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    display: inline-block;
+    padding: 0;
+}

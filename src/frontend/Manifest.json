@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Hashlocker",
+  "description": "Password Management. Simplified.",
+  "version": "1.0",
+  "permissions": [
+    "cookies",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://se-prod.cse.buffalo.edu/*"
+  ],
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "window.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "bootstrap.min.js",
+        "bootstrap.min.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

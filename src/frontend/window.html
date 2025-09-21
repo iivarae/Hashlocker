@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="background.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="home.css" rel="stylesheet">
+</head>
+<body>
+
+<!--Container for entrance page-->
+<div class="container text-center" id="landing-page">
+    <h1 class="mb-4">Welcome to HashLocker</h1>
+    <p><b>Password Management. Simplified.</b></p>
+    <hr class="my-4">
+    <div class="w-100">
+        <button type="button" id="login-button" class="btn my-2 w-100">Log In</button>
+        <br>
+        <button type="button" id="signup-button" class="btn my-2 w-100">Sign Up</button>
+    </div>
+</div>
+
+<!--Container for login-->
+<div id="login-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-arrow"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <div>
+            <h1 class="mb-4">Login</h1>
+            <hr class="my-4">
+            <form id="login-form" class="mt-4 d-grid gap-3">
+                <div class="form-group text-start w-100">
+                    <label for="username" class="w-100">Username:
+                        <input type="text" class="form-control w-100 rounded" id="username" placeholder="username" maxlength="25">
+                    </label>
+                </div>
+                <div class="form-group text-start w-100">
+                    <label for="password" class="w-100">Password:
+                        <input type="password" class="form-control w-100 rounded" id="password" placeholder="password" maxlength="25">
+                    </label>
+                </div>
+                <p id="error" class="m-0" style="color: red; font-size: 1rem;"></p>
+                <input type="button" id="login" value="Login" class="m-0 btn w-100">
+            </form>
+        </div>
+        <div class="fixed-bottom mb-3">
+            <p role="button" id="forgot-password-button" class="d-inline text-decoration-underline" style="font-size: 1rem;">Forgot password?</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Container for first Forgot Password Page asking for username-->
+<div id="forgot-password-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-to-login"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <h1 class="mb-4">Forgot Password</h1>
+        <hr class="my-4">
+        <p class="mb-3">Please enter your username to reset your password.</p>
+        <form id="forgot-password-form" class="mt-4 d-grid gap-3">
+            <div class="form-group text-start w-100">
+                <label for="forgot-username" class="w-100">Username:
+                    <input type="text" class="form-control w-100 rounded" id="forgot-username" placeholder="username" maxlength="25">
+                </label>
+            </div>
+            <p id="forgot-error" class="m-0" style="color: red; font-size: 1rem;"></p>
+            <input type="button" id="security-question-button" value="Continue" class="m-0 btn w-100">
+        </form>
+    </div>
+</div>
+
+<!-- Security Question Page proceeding first forgot password page -->
+<div id="security-question-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-to-forgot"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <h1 class="mb-4">Security Question</h1>
+        <hr class="my-4">
+        <p class="mb-3" id="security-question-text">What is your favorite color?</p> <!-- Placeholder text -->
+        <form id="security-question-form" class="mt-4 d-grid gap-3">
+            <div class="form-group text-start w-100">
+                <label for="security-answer" class="w-100">Answer:
+                    <input type="text" class="form-control w-100 rounded" id="security-answer" placeholder="Enter answer" maxlength="50">
+                </label>
+            </div>
+            <p id="security-error" class="m-0" style="color: red; font-size: 1rem;"></p>
+            <input type="button" id="submit-security-answer" value="Next" class="m-0 btn w-100">
+        </form>
+    </div>
+</div>
+
+<!-- final Password Reset Page asking for user to enter their new password -->
+<div id="password-reset-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-to-security"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <h1 class="mb-4">Reset Password</h1>
+        <hr class="my-4">
+        <p class="mb-3">Enter your new password below.</p>
+        <form id="password-reset-form" class="mt-4 d-grid gap-3">
+            <div class="form-group text-start w-100">
+                <label for="new-password" class="w-100">New Password:
+                    <input type="password" class="form-control w-100 rounded" id="new-password" placeholder="Enter new password" minlength="6" maxlength="255">
+                </label>
+            </div>
+            <div class="form-group text-start w-100">
+                <label for="confirm-password" class="w-100">Confirm Password:
+                    <input type="password" class="form-control w-100 rounded" id="confirm-password" placeholder="Confirm new password" minlength="6" maxlength="255">
+                </label>
+            </div>
+            <p id="password-error" class="m-0" style="color: red; font-size: 1rem;"></p>
+            <input type="button" id="submit-new-password" value="Reset Password" class="m-0 btn w-100">
+        </form>
+    </div>
+</div>
+
+<!--Container for register page-->
+<div id="register-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-arrowRegister"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <!--SHOULD.. be okay to have these handled by visibility as it doesnt rely on user specific data-->
+        <!--Certain Chrome Extensions use layering via z-index or the css display property to handle navigation-->
+        <div>
+            <h1 class="mb-4">Sign Up</h1>
+            <hr class="my-4">
+            <!--I'm not sure how Chrome handles forms. However, as I understand, we host a web app anyway that we could potentially make post requests to-->
+            <!--Either way, add a salt, hash the password, store both.-->
+            <!--Generate some kind of token for the logged in user-->
+            <form action="/registerForm" method="post" enctype="application/x-www-form-urlencoded" class="mt-4 d-grid gap-3">
+                <div class="form-group text-start w-100">
+                    <label for="input-usernameReg" class="w-100">
+                        <input type="text" class="form-control rounded-box w-100" id="input-usernameReg" name="username" placeholder="Username" maxlength="25">
+                    </label>
+                </div>
+                <div class="form-group text-start w-100">
+                    <label for="input-email" class="w-100">
+                        <!--   <i class="fas fa-dragon"></i> need to find the css that works with the setup-->
+                        <input type="email" class="form-control rounded-box w-100" id="input-email" name="email"  placeholder="Email" maxlength="35">
+
+                    </label>
+                </div>
+                <div class="form-group text-start w-100">
+                    <label for="input-passwordReg" class="w-100">
+                        <input type="password" class="form-control rounded-box w-100" id="input-passwordReg" name="password"  placeholder="Password" maxlength="25">
+                    </label>
+                </div>
+                <div class="form-group text-start w-100">
+                    <label for="input-verifyPassword" class="w-100">
+                        <input type="password" class="form-control rounded-box w-100" id="input-verifyPassword" name="verifyPassword" placeholder="Verify Password" maxlength="25">
+                    </label>
+                </div>
+                <!--On submission, div elements should be CREATED based on the user authentication input-->
+                <p id="register-error" class="m-0" style="color: red; font-size: 1rem;"></p>
+                <button type="button" id="continue-button" class="mt-2 btn w-100">Continue</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Container for security questions page-->
+<div id="SecurityQ-page" style="visibility: hidden; display: none;">
+    <p role="button" class="ms-3 mt-3 position-absolute h5" id="back-arrowSecurityQ"><i class="fa-solid fa-arrow-left"></i></p>
+    <div class="container text-center">
+        <!--SHOULD.. be okay to have these handled by visibility as it doesnt rely on user specific data-->
+        <!--Certain Chrome Extensions use layering via z-index or the css display property to handle navigation-->
+        <div>
+            <h1 class="mb-4">Security Questions</h1>
+            <hr class="my-4">
+            <!--I'm not sure how Chrome handles forms. However, as I understand, we host a web app anyway that we could potentially make post requests to-->
+            <!--Either way, add a salt, hash the password, store both.-->
+            <!--Generate some kind of token for the logged in user-->
+            <form action="/SecurityQForm" method="post" enctype="application/x-www-form-urlencoded" class="mt-4 d-grid gap-3">
+                <!-- <div class="dropdown w-100">
+                         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Question 1
+                         <span class="caret"></span></button>
+                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Favorite Teacher</a></li>
+                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Most hated person</a></li>
+                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Favourite family member</a></li>
+                         <li role="presentation" class="divider"></li>
+                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                     </ul>
+                     </div>-->
+                <select     class="btn dropdown-toggle " type="button" id="menu1" data-toggle="dropdown", style = " height: 40px;">
+                    <option value="prompt" selected>Pick one question to answer</option>
+                    <option value=1>Who is your favourite professor?</option>
+                    <option value=2>Who is the person you hate the most?</option>
+                    <option value=3>Who is your favourite family member?</option>
+
+                </select>
+                <div class="form-group text-start w-100">
+                    <label for="question-response" class="w-100">
+                        <input type="text" class="form-control rounded-box w-100" id="question-response" placeholder="Question 1 response" maxlength="20">
+                    </label>
+                </div>
+
+
+                <!--On submission, div elements should be CREATED based on the user authentication input-->
+                <p id="question-error" class="m-0" style="color: red; font-size: 1rem;"></p>
+                <button type="button" id="signUP-button" class="mt-2 btn w-100">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
